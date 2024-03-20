@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Golang執行檔編譯時隱藏Console視窗</title>
+    <url>/2024/03/20/Golang%E5%9F%B7%E8%A1%8C%E6%AA%94%E7%B7%A8%E8%AD%AF%E6%99%82%E9%9A%B1%E8%97%8FConsole%E8%A6%96%E7%AA%97/</url>
+    <content><![CDATA[<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> to/your/project/</span><br><span class="line">go build <span class="literal">-ldflags</span> <span class="literal">-H</span>=windowsgui .</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>golang</category>
+      </categories>
+      <tags>
+        <tag>windows</tag>
+        <tag>golang</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PowerShell腳本無法使用</title>
     <url>/2024/03/19/PowerShell%E8%85%B3%E6%9C%AC%E7%84%A1%E6%B3%95%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1 id="問題"><a href="#問題" class="headerlink" title="問題"></a>問題</h1><p>在執行 Windows PowerShell 的 .ps1 指令稿時，出現「系統上已停用指令碼執行」的錯誤訊息，該如何解決？</p>
