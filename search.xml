@@ -4,10 +4,10 @@
     <title>PowerShell腳本無法使用</title>
     <url>/2024/03/19/PowerShell%E8%85%B3%E6%9C%AC%E7%84%A1%E6%B3%95%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1 id="問題"><a href="#問題" class="headerlink" title="問題"></a>問題</h1><p>在執行 Windows PowerShell 的 .ps1 指令稿時，出現「系統上已停用指令碼執行」的錯誤訊息，該如何解決？</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">請參閱 about_Execution_Policies，網址為 https:/go.microsoft.com/fwlink/?LinkID=135170。</span><br><span class="line">位於 線路:1 字元:1</span><br><span class="line">+ hexo init blog</span><br><span class="line">+ ~~~~</span><br><span class="line">    + CategoryInfo          : SecurityError: (:) [], PSSecurityException</span><br><span class="line">    + FullyQualifiedErrorId : UnauthorizedAccess</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">請參閱 about_Execution_Policies，網址為 https:/go.microsoft.com/fwlink/?LinkID=<span class="number">135170</span>。</span><br><span class="line">位於 線路:<span class="number">1</span> 字元:<span class="number">1</span></span><br><span class="line">+ hexo init blog</span><br><span class="line">+ ~~~~</span><br><span class="line">    + CategoryInfo          : SecurityError: (:) [], PSSecurityException</span><br><span class="line">    + FullyQualifiedErrorId : UnauthorizedAccess</span><br></pre></td></tr></table></figure>
 
 <h1 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h1><p>以系統管理員身分執行PowerShell輸入下列指令，並選擇Y確認。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Set-ExecutionPolicy RemoteSigned</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Set-ExecutionPolicy</span> RemoteSigned</span><br></pre></td></tr></table></figure>
 
 <p>微軟的官方說明</p>
 <!-- <img src="/PowerShell腳本無法使用/1.jpg"> -->
