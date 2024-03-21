@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Golang-排序</title>
+    <url>/2024/03/20/Golang-%E6%8E%92%E5%BA%8F/</url>
+    <content><![CDATA[<h1 id="一般排序"><a href="#一般排序" class="headerlink" title="一般排序"></a>一般排序</h1><p>基本的sort套件。</p>
+<h2 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h2><figure class="highlight golang"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;sort&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="comment">//sort int</span></span><br><span class="line">	s1 := []<span class="type">int</span>&#123;<span class="number">8</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>&#125;</span><br><span class="line">	sort.Ints(s1)</span><br><span class="line">	fmt.Println(s1)</span><br><span class="line"></span><br><span class="line">	<span class="comment">//sot int reverse</span></span><br><span class="line">	sort.Sort(sort.Reverse(sort.IntSlice(s1)))</span><br><span class="line">	fmt.Println(s1)</span><br><span class="line"></span><br><span class="line">	<span class="comment">//sort string</span></span><br><span class="line">	s2 := []<span class="type">string</span>&#123;<span class="string">&quot;aaa&quot;</span>, <span class="string">&quot;bbb&quot;</span>, <span class="string">&quot;6&quot;</span>, <span class="string">&quot;3&quot;</span>, <span class="string">&quot;1&quot;</span>, <span class="string">&quot;4&quot;</span>&#125;</span><br><span class="line">	sort.Strings(s2)</span><br><span class="line">	fmt.Println(s2)</span><br><span class="line"></span><br><span class="line">	<span class="comment">//sot string reverse</span></span><br><span class="line">	sort.Sort(sort.Reverse(sort.StringSlice(s2)))</span><br><span class="line">	fmt.Println(s2)</span><br><span class="line"></span><br><span class="line">	<span class="comment">//sort float64</span></span><br><span class="line">	s3 := []<span class="type">float64</span>&#123;<span class="number">1</span>, <span class="number">1.2</span>, <span class="number">0</span>, <span class="number">-1.9</span>, <span class="number">-82.333</span>, <span class="number">99.11</span>&#125;</span><br><span class="line">	sort.Float64s(s3)</span><br><span class="line">	fmt.Println(s3)</span><br><span class="line"></span><br><span class="line">	<span class="comment">//sot float64 reverse</span></span><br><span class="line">	sort.Sort(sort.Reverse(sort.Float64Slice(s3)))</span><br><span class="line">	fmt.Println(s3)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="物件排序"><a href="#物件排序" class="headerlink" title="物件排序"></a>物件排序</h1><p>物件列表指定參數排序。</p>
+<h2 id="範例-1"><a href="#範例-1" class="headerlink" title="範例"></a>範例</h2><figure class="highlight golang"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;sort&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Data <span class="keyword">struct</span> &#123;</span><br><span class="line">	ID   <span class="type">int</span></span><br><span class="line">	Name <span class="type">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="comment">//sort struct</span></span><br><span class="line">	ds := []Data&#123;&#125;</span><br><span class="line">	ds = <span class="built_in">append</span>(ds, Data&#123;ID: <span class="number">49</span>, Name: <span class="string">&quot;kevin&quot;</span>&#125;)</span><br><span class="line">	ds = <span class="built_in">append</span>(ds, Data&#123;ID: <span class="number">11</span>, Name: <span class="string">&quot;peter&quot;</span>&#125;)</span><br><span class="line">	ds = <span class="built_in">append</span>(ds, Data&#123;ID: <span class="number">11</span>, Name: <span class="string">&quot;mary&quot;</span>&#125;)</span><br><span class="line">	ds = <span class="built_in">append</span>(ds, Data&#123;ID: <span class="number">11</span>, Name: <span class="string">&quot;adon&quot;</span>&#125;)</span><br><span class="line">	ds = <span class="built_in">append</span>(ds, Data&#123;ID: <span class="number">15</span>, Name: <span class="string">&quot;lily&quot;</span>&#125;)</span><br><span class="line"></span><br><span class="line">	<span class="comment">//sort by id</span></span><br><span class="line">	sort.Slice(ds, <span class="function"><span class="keyword">func</span><span class="params">(i, j <span class="type">int</span>)</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> ds[i].ID &lt; ds[j].ID</span><br><span class="line">	&#125;)</span><br><span class="line">	fmt.Println(ds)</span><br><span class="line"></span><br><span class="line">	<span class="comment">//sort by Name</span></span><br><span class="line">	sort.Slice(ds, <span class="function"><span class="keyword">func</span><span class="params">(i, j <span class="type">int</span>)</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> ds[i].Name &lt; ds[j].Name</span><br><span class="line">	&#125;)</span><br><span class="line">	fmt.Println(ds)</span><br><span class="line"></span><br><span class="line">	<span class="comment">//sort by id reverse</span></span><br><span class="line">	sort.Slice(ds, <span class="function"><span class="keyword">func</span><span class="params">(i, j <span class="type">int</span>)</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> ds[i].ID &gt; ds[j].ID</span><br><span class="line">	&#125;)</span><br><span class="line">	fmt.Println(ds)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="二階排序"><a href="#二階排序" class="headerlink" title="二階排序"></a>二階排序</h1><p>如果Name一樣時，希望再透過ID做二次排序。</p>
+<h2 id="範例-2"><a href="#範例-2" class="headerlink" title="範例"></a>範例</h2><figure class="highlight golang"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;sort&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Data <span class="keyword">struct</span> &#123;</span><br><span class="line">	ID   <span class="type">int</span></span><br><span class="line">	Name <span class="type">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="comment">//sort struct</span></span><br><span class="line">	ds := []Data&#123;&#125;</span><br><span class="line">	ds = <span class="built_in">append</span>(ds, Data&#123;ID: <span class="number">49</span>, Name: <span class="string">&quot;kevin&quot;</span>&#125;)</span><br><span class="line">	ds = <span class="built_in">append</span>(ds, Data&#123;ID: <span class="number">11</span>, Name: <span class="string">&quot;peter&quot;</span>&#125;)</span><br><span class="line">	ds = <span class="built_in">append</span>(ds, Data&#123;ID: <span class="number">13</span>, Name: <span class="string">&quot;kevin&quot;</span>&#125;)</span><br><span class="line">	ds = <span class="built_in">append</span>(ds, Data&#123;ID: <span class="number">12</span>, Name: <span class="string">&quot;kevin&quot;</span>&#125;)</span><br><span class="line">	ds = <span class="built_in">append</span>(ds, Data&#123;ID: <span class="number">15</span>, Name: <span class="string">&quot;lily&quot;</span>&#125;)</span><br><span class="line"></span><br><span class="line">	<span class="comment">//sort by Name</span></span><br><span class="line">	sort.Slice(ds, <span class="function"><span class="keyword">func</span><span class="params">(i, j <span class="type">int</span>)</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> ds[i].Name == ds[j].Name &#123;</span><br><span class="line">			<span class="keyword">return</span> ds[i].ID &lt; ds[j].ID</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> ds[i].Name &lt; ds[j].Name</span><br><span class="line">	&#125;)</span><br><span class="line">	fmt.Println(ds)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="自然排序"><a href="#自然排序" class="headerlink" title="自然排序"></a>自然排序</h1><p>你是否常遇到以下的問題?<br>[“A11”,”A3”,”A2”,”A1”]<br>字串排序結果: [“A1”,”A11”,”A2”,”A3”]<br>希望結果: [“A1”,”A2”,”A3”,”A4”]</p>
+<p>IP的排序也會有此需求，這時候你需要自然排序!!!</p>
+<p>引用套件:</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">go get github.com/facette/natsort</span><br></pre></td></tr></table></figure>
+<h2 id="範例-3"><a href="#範例-3" class="headerlink" title="範例"></a>範例</h2><figure class="highlight golang"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;sort&quot;</span></span><br><span class="line"></span><br><span class="line">	<span class="string">&quot;github.com/facette/natsort&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Data <span class="keyword">struct</span> &#123;</span><br><span class="line">	ID   <span class="type">string</span></span><br><span class="line">	Name <span class="type">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="comment">//sort string</span></span><br><span class="line">	s2 := []<span class="type">string</span>&#123;<span class="string">&quot;Device2&quot;</span>, <span class="string">&quot;Device11&quot;</span>, <span class="string">&quot;Device1&quot;</span>, <span class="string">&quot;Device22&quot;</span>, <span class="string">&quot;Device13&quot;</span>, <span class="string">&quot;Device3&quot;</span>&#125;</span><br><span class="line">	sort.Strings(s2)</span><br><span class="line">	fmt.Println(s2)</span><br><span class="line"></span><br><span class="line">	<span class="comment">//natsort string</span></span><br><span class="line">	s2 = []<span class="type">string</span>&#123;<span class="string">&quot;Device2&quot;</span>, <span class="string">&quot;Device11&quot;</span>, <span class="string">&quot;Device1&quot;</span>, <span class="string">&quot;Device22&quot;</span>, <span class="string">&quot;Device13&quot;</span>, <span class="string">&quot;Device3&quot;</span>&#125;</span><br><span class="line">	natsort.Sort(s2)</span><br><span class="line">	fmt.Println(s2)</span><br><span class="line"></span><br><span class="line">	<span class="comment">//natsort struct slice</span></span><br><span class="line">	ds := []Data&#123;&#125;</span><br><span class="line">	ds = <span class="built_in">append</span>(ds, Data&#123;ID: <span class="string">&quot;2&quot;</span>, Name: <span class="string">&quot;kevin&quot;</span>&#125;)</span><br><span class="line">	ds = <span class="built_in">append</span>(ds, Data&#123;ID: <span class="string">&quot;11&quot;</span>, Name: <span class="string">&quot;peter&quot;</span>&#125;)</span><br><span class="line">	ds = <span class="built_in">append</span>(ds, Data&#123;ID: <span class="string">&quot;1&quot;</span>, Name: <span class="string">&quot;mary&quot;</span>&#125;)</span><br><span class="line">	ds = <span class="built_in">append</span>(ds, Data&#123;ID: <span class="string">&quot;3&quot;</span>, Name: <span class="string">&quot;adon&quot;</span>&#125;)</span><br><span class="line">	ds = <span class="built_in">append</span>(ds, Data&#123;ID: <span class="string">&quot;12&quot;</span>, Name: <span class="string">&quot;lily&quot;</span>&#125;)</span><br><span class="line">	<span class="comment">//sort by id</span></span><br><span class="line">	sort.Slice(ds, <span class="function"><span class="keyword">func</span><span class="params">(i, j <span class="type">int</span>)</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> natsort.Compare(ds[i].ID, ds[j].ID)</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	fmt.Println(ds)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>golang</category>
+      </categories>
+      <tags>
+        <tag>golang</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Golang執行檔編譯時隱藏Console視窗</title>
+    <url>/2024/03/20/Golang%E5%9F%B7%E8%A1%8C%E6%AA%94%E7%B7%A8%E8%AD%AF%E6%99%82%E9%9A%B1%E8%97%8FConsole%E8%A6%96%E7%AA%97/</url>
+    <content><![CDATA[<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> to/your/project/</span><br><span class="line">go build <span class="literal">-ldflags</span> <span class="literal">-H</span>=windowsgui .</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>golang</category>
+      </categories>
+      <tags>
+        <tag>golang</tag>
+        <tag>windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PowerShell腳本無法使用</title>
     <url>/2024/03/19/PowerShell%E8%85%B3%E6%9C%AC%E7%84%A1%E6%B3%95%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1 id="問題"><a href="#問題" class="headerlink" title="問題"></a>問題</h1><p>在執行 Windows PowerShell 的 .ps1 指令稿時，出現「系統上已停用指令碼執行」的錯誤訊息，該如何解決？</p>
@@ -23,39 +58,51 @@
       </tags>
   </entry>
   <entry>
-    <title>Golang執行檔編譯時隱藏Console視窗</title>
-    <url>/2024/03/20/Golang%E5%9F%B7%E8%A1%8C%E6%AA%94%E7%B7%A8%E8%AD%AF%E6%99%82%E9%9A%B1%E8%97%8FConsole%E8%A6%96%E7%AA%97/</url>
-    <content><![CDATA[<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> to/your/project/</span><br><span class="line">go build <span class="literal">-ldflags</span> <span class="literal">-H</span>=windowsgui .</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>golang</category>
-      </categories>
-      <tags>
-        <tag>windows</tag>
-        <tag>golang</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2024/03/19/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>Sokit簡易TCP/UDP測試工具分享</title>
+    <url>/2024/03/21/Sokit%E7%B0%A1%E6%98%93TCP-UDP%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/</url>
+    <content><![CDATA[<p>優點特性:</p>
+<ul>
+<li>模擬TCP&#x2F;UDP server (字串或是Hex皆可)</li>
+<li>模擬TCP&#x2F;UDP Client (字串或是Hex皆可)</li>
+<li>轉發功能</li>
+</ul>
+<p><a href="https://github.com/sinpolib/sokit">Github專案</a>  <a href="https://mega.nz/file/1l9AzS4Q#Q-D9Slf4O52bOtmkjYawedvQR4GxyfRi0hj7svkUHR4">載點</a></p>
+<h3 id="建立Server-Client"><a href="#建立Server-Client" class="headerlink" title="建立Server-Client:"></a>建立Server-Client:</h3><ol>
+<li><p>開啟兩隻程式(如下圖)，一隻模擬TCP Server(左)，一隻模擬TCP Client(右)。</p>
+</li>
+<li><p>設定好要使用的IP+PORT，並互相建立連線。</p>
+</li>
+</ol>
+<p><img src="/2024/03/21/Sokit%E7%B0%A1%E6%98%93TCP-UDP%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/1.png" alt="ref"></p>
+<ol start="3">
+<li><p>Client送出字串123，Server接收到字串。</p>
+</li>
+<li><p>Server指定Connection列表中的Client目標，並送出999給Client，Client接收到Server送來的字串999。</p>
+</li>
+</ol>
+<h3 id="HEX通訊"><a href="#HEX通訊" class="headerlink" title="HEX通訊"></a>HEX通訊</h3><p><img src="/2024/03/21/Sokit%E7%B0%A1%E6%98%93TCP-UDP%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/2.png" alt="ref"></p>
+<ol>
+<li><p>Client送出Hex資料[33 32 31]給Server。(注意:如果要送Hex資料需要使用[ ]將資料包起來)</p>
+</li>
+<li><p>Server可以將資料展開，將會把資料由字串改成Hex表示。</p>
+</li>
+</ol>
+<p><img src="/2024/03/21/Sokit%E7%B0%A1%E6%98%93TCP-UDP%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/3.png" alt="ref"></p>
+<h3 id="轉發測試"><a href="#轉發測試" class="headerlink" title="轉發測試"></a>轉發測試</h3><ol>
+<li><p>轉發測試時，多開啟一隻程式設定成轉發Server。</p>
+<p>來源設定成127.0.0.1:54321，目標設定127.0.0.1:12345</p>
+</li>
+<li><p>Client連結到轉發Server的來源位置，建立連線時，將會透過傳發Server連到目標Server。</p>
+</li>
+</ol>
+<p><img src="/2024/03/21/Sokit%E7%B0%A1%E6%98%93TCP-UDP%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/4.png" alt="ref"></p>
 ]]></content>
       <categories>
-        <category>雜記</category>
+        <category>share</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>tool</tag>
+        <tag>share</tag>
       </tags>
   </entry>
 </search>

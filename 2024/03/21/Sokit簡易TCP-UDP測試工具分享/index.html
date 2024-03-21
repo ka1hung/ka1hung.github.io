@@ -20,28 +20,34 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ka1hung.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.19.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="優點特性:  模擬TCP&#x2F;UDP server (字串或是Hex皆可) 模擬TCP&#x2F;UDP Client (字串或是Hex皆可) 轉發功能  Github專案  載點 建立Server-Client: 開啟兩隻程式(如下圖)，一隻模擬TCP Server(左)，一隻模擬TCP Client(右)。  設定好要使用的IP+PORT，並互相建立連線。     Client送出字串1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://ka1hung.github.io/2024/03/19/hello-world/index.html">
+<meta property="og:title" content="Sokit簡易TCP&#x2F;UDP測試工具分享">
+<meta property="og:url" content="https://ka1hung.github.io/2024/03/21/Sokit%E7%B0%A1%E6%98%93TCP-UDP%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/index.html">
 <meta property="og:site_name" content="放空俱樂部">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="優點特性:  模擬TCP&#x2F;UDP server (字串或是Hex皆可) 模擬TCP&#x2F;UDP Client (字串或是Hex皆可) 轉發功能  Github專案  載點 建立Server-Client: 開啟兩隻程式(如下圖)，一隻模擬TCP Server(左)，一隻模擬TCP Client(右)。  設定好要使用的IP+PORT，並互相建立連線。     Client送出字串1">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2024-03-19T02:56:29.549Z">
-<meta property="article:modified_time" content="2024-03-19T09:02:52.662Z">
+<meta property="og:image" content="https://ka1hung.github.io/2024/03/21/Sokit%E7%B0%A1%E6%98%93TCP-UDP%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/1.png">
+<meta property="og:image" content="https://ka1hung.github.io/2024/03/21/Sokit%E7%B0%A1%E6%98%93TCP-UDP%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/2.png">
+<meta property="og:image" content="https://ka1hung.github.io/2024/03/21/Sokit%E7%B0%A1%E6%98%93TCP-UDP%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/3.png">
+<meta property="og:image" content="https://ka1hung.github.io/2024/03/21/Sokit%E7%B0%A1%E6%98%93TCP-UDP%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/4.png">
+<meta property="article:published_time" content="2024-03-21T03:09:39.000Z">
+<meta property="article:modified_time" content="2024-03-21T03:21:44.683Z">
 <meta property="article:author" content="ka1hung">
-<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="tool">
+<meta property="article:tag" content="share">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ka1hung.github.io/2024/03/21/Sokit%E7%B0%A1%E6%98%93TCP-UDP%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/1.png">
 
 
-<link rel="canonical" href="https://ka1hung.github.io/2024/03/19/hello-world/">
+<link rel="canonical" href="https://ka1hung.github.io/2024/03/21/Sokit%E7%B0%A1%E6%98%93TCP-UDP%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://ka1hung.github.io/2024/03/19/hello-world/","path":"2024/03/19/hello-world/","title":"Hello World"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://ka1hung.github.io/2024/03/21/Sokit%E7%B0%A1%E6%98%93TCP-UDP%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/","path":"2024/03/21/Sokit簡易TCP-UDP測試工具分享/","title":"Sokit簡易TCP/UDP測試工具分享"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Hello World | 放空俱樂部</title>
+<title>Sokit簡易TCP/UDP測試工具分享 | 放空俱樂部</title>
   
 
 
@@ -141,7 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8BServer-Client"><span class="nav-number">1.</span> <span class="nav-text">建立Server-Client:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HEX%E9%80%9A%E8%A8%8A"><span class="nav-number">2.</span> <span class="nav-text">HEX通訊</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%89%E7%99%BC%E6%B8%AC%E8%A9%A6"><span class="nav-number">3.</span> <span class="nav-text">轉發測試</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -156,18 +162,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -199,7 +205,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://ka1hung.github.io/2024/03/19/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://ka1hung.github.io/2024/03/21/Sokit%E7%B0%A1%E6%98%93TCP-UDP%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars.githubusercontent.com/u/22629635?s=400&u=753e8689a33b87d0ddc0382b9b5d946e910f9870&v=4">
@@ -212,12 +218,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Hello World | 放空俱樂部">
+      <meta itemprop="name" content="Sokit簡易TCP/UDP測試工具分享 | 放空俱樂部">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World
+          Sokit簡易TCP/UDP測試工具分享
         </h1>
 
         <div class="post-meta-container">
@@ -229,7 +235,7 @@
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2024-03-19 10:56:29 / 修改時間：17:02:52" itemprop="dateCreated datePublished" datetime="2024-03-19T10:56:29+08:00">2024-03-19</time>
+      <time title="創建時間：2024-03-21 11:09:39 / 修改時間：11:21:44" itemprop="dateCreated datePublished" datetime="2024-03-21T11:09:39+08:00">2024-03-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -237,7 +243,7 @@
       </span>
       <span class="post-meta-item-text">分類於</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%9B%9C%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">雜記</span></a>
+          <a href="/categories/share/" itemprop="url" rel="index"><span itemprop="name">share</span></a>
         </span>
     </span>
 
@@ -250,19 +256,42 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <div class="post-body" itemprop="articleBody"><p>優點特性:</p>
+<ul>
+<li>模擬TCP&#x2F;UDP server (字串或是Hex皆可)</li>
+<li>模擬TCP&#x2F;UDP Client (字串或是Hex皆可)</li>
+<li>轉發功能</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://github.com/sinpolib/sokit">Github專案</a>  <a target="_blank" rel="noopener" href="https://mega.nz/file/1l9AzS4Q#Q-D9Slf4O52bOtmkjYawedvQR4GxyfRi0hj7svkUHR4">載點</a></p>
+<h3 id="建立Server-Client"><a href="#建立Server-Client" class="headerlink" title="建立Server-Client:"></a>建立Server-Client:</h3><ol>
+<li><p>開啟兩隻程式(如下圖)，一隻模擬TCP Server(左)，一隻模擬TCP Client(右)。</p>
+</li>
+<li><p>設定好要使用的IP+PORT，並互相建立連線。</p>
+</li>
+</ol>
+<p><img src="/2024/03/21/Sokit%E7%B0%A1%E6%98%93TCP-UDP%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/1.png" alt="ref"></p>
+<ol start="3">
+<li><p>Client送出字串123，Server接收到字串。</p>
+</li>
+<li><p>Server指定Connection列表中的Client目標，並送出999給Client，Client接收到Server送來的字串999。</p>
+</li>
+</ol>
+<h3 id="HEX通訊"><a href="#HEX通訊" class="headerlink" title="HEX通訊"></a>HEX通訊</h3><p><img src="/2024/03/21/Sokit%E7%B0%A1%E6%98%93TCP-UDP%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/2.png" alt="ref"></p>
+<ol>
+<li><p>Client送出Hex資料[33 32 31]給Server。(注意:如果要送Hex資料需要使用[ ]將資料包起來)</p>
+</li>
+<li><p>Server可以將資料展開，將會把資料由字串改成Hex表示。</p>
+</li>
+</ol>
+<p><img src="/2024/03/21/Sokit%E7%B0%A1%E6%98%93TCP-UDP%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/3.png" alt="ref"></p>
+<h3 id="轉發測試"><a href="#轉發測試" class="headerlink" title="轉發測試"></a>轉發測試</h3><ol>
+<li><p>轉發測試時，多開啟一隻程式設定成轉發Server。</p>
+<p>來源設定成127.0.0.1:54321，目標設定127.0.0.1:12345</p>
+</li>
+<li><p>Client連結到轉發Server的來源位置，建立連線時，將會透過傳發Server連到目標Server。</p>
+</li>
+</ol>
+<p><img src="/2024/03/21/Sokit%E7%B0%A1%E6%98%93TCP-UDP%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/4.png" alt="ref"></p>
 
     </div>
 
@@ -272,18 +301,19 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/tool/" rel="tag"># tool</a>
+              <a href="/tags/share/" rel="tag"># share</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/2024/03/20/Golang-%E6%8E%92%E5%BA%8F/" rel="prev" title="Golang-排序">
+                  <i class="fa fa-angle-left"></i> Golang-排序
+                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/03/19/PowerShell%E8%85%B3%E6%9C%AC%E7%84%A1%E6%B3%95%E4%BD%BF%E7%94%A8/" rel="next" title="PowerShell腳本無法使用">
-                  PowerShell腳本無法使用 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>

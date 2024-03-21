@@ -20,25 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ka1hung.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.19.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="學習小筆記">
-<meta property="og:type" content="website">
-<meta property="og:title" content="放空俱樂部">
-<meta property="og:url" content="https://ka1hung.github.io/index.html">
+    <meta name="description" content="一般排序基本的sort套件。 範例package mainimport (	&quot;fmt&quot;	&quot;sort&quot;)func main() &#123;	&#x2F;&#x2F;sort int	s1 :&#x3D; []int&#123;8, 2, 6, 3, 1, 4&#125;	sort.Ints(s1)	fmt.Println(s1)	&#x2F;&#x2F;sot int reverse	sort.Sort(s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Golang-排序">
+<meta property="og:url" content="https://ka1hung.github.io/2024/03/20/Golang-%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="放空俱樂部">
-<meta property="og:description" content="學習小筆記">
+<meta property="og:description" content="一般排序基本的sort套件。 範例package mainimport (	&quot;fmt&quot;	&quot;sort&quot;)func main() &#123;	&#x2F;&#x2F;sort int	s1 :&#x3D; []int&#123;8, 2, 6, 3, 1, 4&#125;	sort.Ints(s1)	fmt.Println(s1)	&#x2F;&#x2F;sot int reverse	sort.Sort(s">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2024-03-20T03:08:38.000Z">
+<meta property="article:modified_time" content="2024-03-20T03:34:16.485Z">
 <meta property="article:author" content="ka1hung">
+<meta property="article:tag" content="golang">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://ka1hung.github.io/">
+<link rel="canonical" href="https://ka1hung.github.io/2024/03/20/Golang-%E6%8E%92%E5%BA%8F/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-TW","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://ka1hung.github.io/2024/03/20/Golang-%E6%8E%92%E5%BA%8F/","path":"2024/03/20/Golang-排序/","title":"Golang-排序"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>放空俱樂部</title>
+<title>Golang-排序 | 放空俱樂部</title>
   
 
 
@@ -71,7 +74,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">放空俱樂部</h1>
+      <p class="site-title">放空俱樂部</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">世界太大，腦袋太小，那那那...就放空吧...</p>
@@ -125,7 +128,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -138,6 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E8%88%AC%E6%8E%92%E5%BA%8F"><span class="nav-number">1.</span> <span class="nav-text">一般排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B"><span class="nav-number">1.1.</span> <span class="nav-text">範例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%A9%E4%BB%B6%E6%8E%92%E5%BA%8F"><span class="nav-number">2.</span> <span class="nav-text">物件排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B-1"><span class="nav-number">2.1.</span> <span class="nav-text">範例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E9%9A%8E%E6%8E%92%E5%BA%8F"><span class="nav-number">3.</span> <span class="nav-text">二階排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B-2"><span class="nav-number">3.1.</span> <span class="nav-text">範例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%87%AA%E7%84%B6%E6%8E%92%E5%BA%8F"><span class="nav-number">4.</span> <span class="nav-text">自然排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B-3"><span class="nav-number">4.1.</span> <span class="nav-text">範例</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -184,130 +188,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://ka1hung.github.io/2024/03/21/Sokit%E7%B0%A1%E6%98%93TCP-UDP%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/22629635?s=400&u=753e8689a33b87d0ddc0382b9b5d946e910f9870&v=4">
-      <meta itemprop="name" content="ka1hung">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="放空俱樂部">
-      <meta itemprop="description" content="學習小筆記">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 放空俱樂部">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/03/21/Sokit%E7%B0%A1%E6%98%93TCP-UDP%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/" class="post-title-link" itemprop="url">Sokit簡易TCP/UDP測試工具分享</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-      
-
-      <time title="創建時間：2024-03-21 11:09:39 / 修改時間：11:21:44" itemprop="dateCreated datePublished" datetime="2024-03-21T11:09:39+08:00">2024-03-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/share/" itemprop="url" rel="index"><span itemprop="name">share</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>優點特性:</p>
-<ul>
-<li>模擬TCP&#x2F;UDP server (字串或是Hex皆可)</li>
-<li>模擬TCP&#x2F;UDP Client (字串或是Hex皆可)</li>
-<li>轉發功能</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://github.com/sinpolib/sokit">Github專案</a>  <a target="_blank" rel="noopener" href="https://mega.nz/file/1l9AzS4Q#Q-D9Slf4O52bOtmkjYawedvQR4GxyfRi0hj7svkUHR4">載點</a></p>
-<h3 id="建立Server-Client"><a href="#建立Server-Client" class="headerlink" title="建立Server-Client:"></a>建立Server-Client:</h3><ol>
-<li><p>開啟兩隻程式(如下圖)，一隻模擬TCP Server(左)，一隻模擬TCP Client(右)。</p>
-</li>
-<li><p>設定好要使用的IP+PORT，並互相建立連線。</p>
-</li>
-</ol>
-<p><img src="/2024/03/21/Sokit%E7%B0%A1%E6%98%93TCP-UDP%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/1.png" alt="ref"></p>
-<ol start="3">
-<li><p>Client送出字串123，Server接收到字串。</p>
-</li>
-<li><p>Server指定Connection列表中的Client目標，並送出999給Client，Client接收到Server送來的字串999。</p>
-</li>
-</ol>
-<h3 id="HEX通訊"><a href="#HEX通訊" class="headerlink" title="HEX通訊"></a>HEX通訊</h3><p><img src="/2024/03/21/Sokit%E7%B0%A1%E6%98%93TCP-UDP%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/2.png" alt="ref"></p>
-<ol>
-<li><p>Client送出Hex資料[33 32 31]給Server。(注意:如果要送Hex資料需要使用[ ]將資料包起來)</p>
-</li>
-<li><p>Server可以將資料展開，將會把資料由字串改成Hex表示。</p>
-</li>
-</ol>
-<p><img src="/2024/03/21/Sokit%E7%B0%A1%E6%98%93TCP-UDP%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/3.png" alt="ref"></p>
-<h3 id="轉發測試"><a href="#轉發測試" class="headerlink" title="轉發測試"></a>轉發測試</h3><ol>
-<li><p>轉發測試時，多開啟一隻程式設定成轉發Server。</p>
-<p>來源設定成127.0.0.1:54321，目標設定127.0.0.1:12345</p>
-</li>
-<li><p>Client連結到轉發Server的來源位置，建立連線時，將會透過傳發Server連到目標Server。</p>
-</li>
-</ol>
-<p><img src="/2024/03/21/Sokit%E7%B0%A1%E6%98%93TCP-UDP%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/4.png" alt="ref"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://ka1hung.github.io/2024/03/20/Golang-%E6%8E%92%E5%BA%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -321,13 +212,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 放空俱樂部">
+      <meta itemprop="name" content="Golang-排序 | 放空俱樂部">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/03/20/Golang-%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">Golang-排序</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Golang-排序
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -359,8 +250,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="一般排序"><a href="#一般排序" class="headerlink" title="一般排序"></a>一般排序</h1><p>基本的sort套件。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="一般排序"><a href="#一般排序" class="headerlink" title="一般排序"></a>一般排序</h1><p>基本的sort套件。</p>
 <h2 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h2><figure class="highlight golang"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;sort&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="comment">//sort int</span></span><br><span class="line">	s1 := []<span class="type">int</span>&#123;<span class="number">8</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>&#125;</span><br><span class="line">	sort.Ints(s1)</span><br><span class="line">	fmt.Println(s1)</span><br><span class="line"></span><br><span class="line">	<span class="comment">//sot int reverse</span></span><br><span class="line">	sort.Sort(sort.Reverse(sort.IntSlice(s1)))</span><br><span class="line">	fmt.Println(s1)</span><br><span class="line"></span><br><span class="line">	<span class="comment">//sort string</span></span><br><span class="line">	s2 := []<span class="type">string</span>&#123;<span class="string">&quot;aaa&quot;</span>, <span class="string">&quot;bbb&quot;</span>, <span class="string">&quot;6&quot;</span>, <span class="string">&quot;3&quot;</span>, <span class="string">&quot;1&quot;</span>, <span class="string">&quot;4&quot;</span>&#125;</span><br><span class="line">	sort.Strings(s2)</span><br><span class="line">	fmt.Println(s2)</span><br><span class="line"></span><br><span class="line">	<span class="comment">//sot string reverse</span></span><br><span class="line">	sort.Sort(sort.Reverse(sort.StringSlice(s2)))</span><br><span class="line">	fmt.Println(s2)</span><br><span class="line"></span><br><span class="line">	<span class="comment">//sort float64</span></span><br><span class="line">	s3 := []<span class="type">float64</span>&#123;<span class="number">1</span>, <span class="number">1.2</span>, <span class="number">0</span>, <span class="number">-1.9</span>, <span class="number">-82.333</span>, <span class="number">99.11</span>&#125;</span><br><span class="line">	sort.Float64s(s3)</span><br><span class="line">	fmt.Println(s3)</span><br><span class="line"></span><br><span class="line">	<span class="comment">//sot float64 reverse</span></span><br><span class="line">	sort.Sort(sort.Reverse(sort.Float64Slice(s3)))</span><br><span class="line">	fmt.Println(s3)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h1 id="物件排序"><a href="#物件排序" class="headerlink" title="物件排序"></a>物件排序</h1><p>物件列表指定參數排序。</p>
@@ -373,7 +263,6 @@
 <p>引用套件:</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">go get github.com/facette/natsort</span><br></pre></td></tr></table></figure>
 <h2 id="範例-3"><a href="#範例-3" class="headerlink" title="範例"></a>範例</h2><figure class="highlight golang"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;sort&quot;</span></span><br><span class="line"></span><br><span class="line">	<span class="string">&quot;github.com/facette/natsort&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Data <span class="keyword">struct</span> &#123;</span><br><span class="line">	ID   <span class="type">string</span></span><br><span class="line">	Name <span class="type">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="comment">//sort string</span></span><br><span class="line">	s2 := []<span class="type">string</span>&#123;<span class="string">&quot;Device2&quot;</span>, <span class="string">&quot;Device11&quot;</span>, <span class="string">&quot;Device1&quot;</span>, <span class="string">&quot;Device22&quot;</span>, <span class="string">&quot;Device13&quot;</span>, <span class="string">&quot;Device3&quot;</span>&#125;</span><br><span class="line">	sort.Strings(s2)</span><br><span class="line">	fmt.Println(s2)</span><br><span class="line"></span><br><span class="line">	<span class="comment">//natsort string</span></span><br><span class="line">	s2 = []<span class="type">string</span>&#123;<span class="string">&quot;Device2&quot;</span>, <span class="string">&quot;Device11&quot;</span>, <span class="string">&quot;Device1&quot;</span>, <span class="string">&quot;Device22&quot;</span>, <span class="string">&quot;Device13&quot;</span>, <span class="string">&quot;Device3&quot;</span>&#125;</span><br><span class="line">	natsort.Sort(s2)</span><br><span class="line">	fmt.Println(s2)</span><br><span class="line"></span><br><span class="line">	<span class="comment">//natsort struct slice</span></span><br><span class="line">	ds := []Data&#123;&#125;</span><br><span class="line">	ds = <span class="built_in">append</span>(ds, Data&#123;ID: <span class="string">&quot;2&quot;</span>, Name: <span class="string">&quot;kevin&quot;</span>&#125;)</span><br><span class="line">	ds = <span class="built_in">append</span>(ds, Data&#123;ID: <span class="string">&quot;11&quot;</span>, Name: <span class="string">&quot;peter&quot;</span>&#125;)</span><br><span class="line">	ds = <span class="built_in">append</span>(ds, Data&#123;ID: <span class="string">&quot;1&quot;</span>, Name: <span class="string">&quot;mary&quot;</span>&#125;)</span><br><span class="line">	ds = <span class="built_in">append</span>(ds, Data&#123;ID: <span class="string">&quot;3&quot;</span>, Name: <span class="string">&quot;adon&quot;</span>&#125;)</span><br><span class="line">	ds = <span class="built_in">append</span>(ds, Data&#123;ID: <span class="string">&quot;12&quot;</span>, Name: <span class="string">&quot;lily&quot;</span>&#125;)</span><br><span class="line">	<span class="comment">//sort by id</span></span><br><span class="line">	sort.Slice(ds, <span class="function"><span class="keyword">func</span><span class="params">(i, j <span class="type">int</span>)</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> natsort.Compare(ds[i].ID, ds[j].ID)</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	fmt.Println(ds)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
     </div>
 
     
@@ -381,184 +270,28 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-tags">
+              <a href="/tags/golang/" rel="tag"># golang</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/03/20/Golang%E5%9F%B7%E8%A1%8C%E6%AA%94%E7%B7%A8%E8%AD%AF%E6%99%82%E9%9A%B1%E8%97%8FConsole%E8%A6%96%E7%AA%97/" rel="prev" title="Golang執行檔編譯時隱藏Console視窗">
+                  <i class="fa fa-angle-left"></i> Golang執行檔編譯時隱藏Console視窗
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/03/21/Sokit%E7%B0%A1%E6%98%93TCP-UDP%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/" rel="next" title="Sokit簡易TCP/UDP測試工具分享">
+                  Sokit簡易TCP/UDP測試工具分享 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
   </article>
 </div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://ka1hung.github.io/2024/03/20/Golang%E5%9F%B7%E8%A1%8C%E6%AA%94%E7%B7%A8%E8%AD%AF%E6%99%82%E9%9A%B1%E8%97%8FConsole%E8%A6%96%E7%AA%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/22629635?s=400&u=753e8689a33b87d0ddc0382b9b5d946e910f9870&v=4">
-      <meta itemprop="name" content="ka1hung">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="放空俱樂部">
-      <meta itemprop="description" content="學習小筆記">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 放空俱樂部">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/03/20/Golang%E5%9F%B7%E8%A1%8C%E6%AA%94%E7%B7%A8%E8%AD%AF%E6%99%82%E9%9A%B1%E8%97%8FConsole%E8%A6%96%E7%AA%97/" class="post-title-link" itemprop="url">Golang執行檔編譯時隱藏Console視窗</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-      
-
-      <time title="創建時間：2024-03-20 10:37:55 / 修改時間：10:40:29" itemprop="dateCreated datePublished" datetime="2024-03-20T10:37:55+08:00">2024-03-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> to/your/project/</span><br><span class="line">go build <span class="literal">-ldflags</span> <span class="literal">-H</span>=windowsgui .</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://ka1hung.github.io/2024/03/19/PowerShell%E8%85%B3%E6%9C%AC%E7%84%A1%E6%B3%95%E4%BD%BF%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/22629635?s=400&u=753e8689a33b87d0ddc0382b9b5d946e910f9870&v=4">
-      <meta itemprop="name" content="ka1hung">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="放空俱樂部">
-      <meta itemprop="description" content="學習小筆記">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 放空俱樂部">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/03/19/PowerShell%E8%85%B3%E6%9C%AC%E7%84%A1%E6%B3%95%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">PowerShell腳本無法使用</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2024-03-19 11:02:04" itemprop="dateCreated datePublished" datetime="2024-03-19T11:02:04+08:00">2024-03-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-03-20 10:46:43" itemprop="dateModified" datetime="2024-03-20T10:46:43+08:00">2024-03-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%9B%9C%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">雜記</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="問題"><a href="#問題" class="headerlink" title="問題"></a>問題</h1><p>在執行 Windows PowerShell 的 .ps1 指令稿時，出現「系統上已停用指令碼執行」的錯誤訊息，該如何解決？</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">請參閱 about_Execution_Policies，網址為 https:/go.microsoft.com/fwlink/?LinkID=<span class="number">135170</span>。</span><br><span class="line">位於 線路:<span class="number">1</span> 字元:<span class="number">1</span></span><br><span class="line">+ hexo init blog</span><br><span class="line">+ ~~~~</span><br><span class="line">    + CategoryInfo          : SecurityError: (:) [], PSSecurityException</span><br><span class="line">    + FullyQualifiedErrorId : UnauthorizedAccess</span><br></pre></td></tr></table></figure>
-
-<h1 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h1><p>以系統管理員身分執行PowerShell輸入下列指令，並選擇Y確認。</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Set-ExecutionPolicy</span> RemoteSigned</span><br></pre></td></tr></table></figure>
-
-<h2 id="微軟的官方說明"><a href="#微軟的官方說明" class="headerlink" title="微軟的官方說明"></a>微軟的官方說明</h2><p><img src="/2024/03/19/PowerShell%E8%85%B3%E6%9C%AC%E7%84%A1%E6%B3%95%E4%BD%BF%E7%94%A8/1.jpg" alt="ref"></p>
-<h1 id="參考來源"><a href="#參考來源" class="headerlink" title="參考來源"></a>參考來源</h1><ol>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-tw/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.4">https://learn.microsoft.com/zh-tw/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.4</a></li>
-<li><a target="_blank" rel="noopener" href="https://officeguide.cc/powershell-set-execution-policy-remote-signed/#google_vignette">https://officeguide.cc/powershell-set-execution-policy-remote-signed/#google_vignette</a></li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
 
 
 
